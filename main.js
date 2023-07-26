@@ -95,7 +95,27 @@ const swiper = new Swiper('.testimonial__container', {
   }
 });
 
+
+
+var mixer = mixitup('.portfolio__container', {
+  selectors: {
+      target: '.portfolio__content'
+  },
+  animation: {
+      duration: 400
+  }
+});
+
+
+const linkPortfolio = document.querySelectorAll('.portfolio__item')
+
+function activePortfolio(){
+  if(linkPortfolio){
+    linkPortfolio.forEach(l=> l.classList.remove('active-portfolio'))
+    this.classList.add('active-portfolio')
+  }
+}
+linkPortfolio.forEach(l=>l.addEventListener('click',activePortfolio))
 /*===== GSAP ANIMATION =====*/ 
-WebGLSampler.from('home__img',{opacity:0, duration:2, delay:.5,x:60})
-WebGLSampler.from('home__data',{opacity:0, duration:2, delay:.5,x:60})
+
 
